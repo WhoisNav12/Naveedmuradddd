@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Who Is Nav?</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="Images/icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="projects.html">Projects</a>
+    </div>
+
+    <div class="logo">
+      <a href="index.html"><img src="Images/my logo.png" alt="Logo"></a>
+    </div>
+
+    <div class="nav-right">
+      <a href="about.html">About</a>
+    </div>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Mobile menu links -->
+    <div class="mobile-menu">
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+
+  <div class="grey-rectangle">
+      <img src="Images/bg.png" alt="My Picture" class="rectangle-img">
+  </div>
+  <div class="name">NAVEED MURAD</div>
+
+  <div class="subtitle-container">
+<p class="subtitle">
+  <span class="line1">Videographer</span>
+  <span class="line2">/ Editor</span>
+</p>
+ <a href="contact.html" class="cta-button">Get in Touch</a>
+</div>
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="logofooter"><img src="Images/my logo.png" alt=""></div>
+    <p class="footer-text">© 2025 Naveed Murad. All rights reserved.</p>
+    <div class="social-links">
+
+      <a href="https://www.instagram.com/nav.jzx/" target="_blank" aria-label="Instagram">
+        <img src="Images/basil--instagram-outline.png" alt="Instagram">
+      </a>
+      <a href="https://bh.linkedin.com/in/naveed-murad-4b8385367" target="_blank" aria-label="LinkedIn">
+        <img src="Images/mingcute--linkedin-line.png" alt="LinkedIn">
+      </a>
+      <a href="mailto:Naveedmurad230@gmail.com" aria-label="Email">
+        <img src="Images/basil--gmail-outline.png" alt="Email">
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+
+    const glow = document.createElement('div');
+glow.classList.add('cursor-glow');
+document.body.appendChild(glow);
+
+let mouseX = 0, mouseY = 0;
+let posX = 0, posY = 0;
+let lastX = 0, lastY = 0;
+let scaleX = 1, scaleY = 1;
+
+const speed = 0.2;
+const maxStretch = 0.3;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animate() {
+  // Smooth follow
+  posX += (mouseX - posX) * speed;
+  posY += (mouseY - posY) * speed;
+
+  // Velocity
+  const dx = mouseX - lastX;
+  const dy = mouseY - lastY;
+  const distance = Math.sqrt(dx*dx + dy*dy);
+
+  const stretch = Math.min(distance / 100, maxStretch);
+
+  // Fluid scaling, never invert
+  scaleX = 1 + Math.abs(stretch * (dx / (distance || 1)));
+  scaleY = 1 + Math.abs(stretch * (dy / (distance || 1)));
+
+  // Set position and scale
+  glow.style.left = `${posX}px`;
+  glow.style.top = `${posY}px`;
+  glow.style.transform = `scale(${scaleX}, ${scaleY})`;
+
+  lastX = posX;
+  lastY = posY;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+
+
+
+  </script>
+</body>
+</html>

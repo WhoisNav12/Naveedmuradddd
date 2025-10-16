@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About · Nav</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Images/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<body>
+
+  <!-- same nav component; highlight About -->
+  <nav>
+    <div class="nav-left">
+      <a href="projects.html">Projects</a>
+    </div>
+
+    <div class="logo">
+      <a href="index.html"><img src="Images/my logo.png" alt="Logo"></a>
+    </div>
+
+    <div class="nav-right">
+      <a href="about.html" class="is-active">About</a>
+    </div>
+
+    <div class="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="projects.html">Projects</a>
+      <a href="about.html" aria-current="page">About</a>
+    </div>
+  </nav>
+
+
+  <section class="about-hero reveal" aria-label="About Nav">
+  <div class="about-hero__body">
+    <span class="about-kicker">Videographer · Editor</span>
+    <h1>Hey, I’m Nav.</h1>
+
+    <p class="about-lead">
+I craft clean, story-driven videos with rhythm, precision, and purpose.
+Sharp edits, balanced grades, and deliveries that hit the mark every time.
+Clear plans. Smooth shoots. No noise, just results.
+    </p>
+
+    <ul class="about-tags" aria-label="Focus areas">
+      <li>Direction</li><li>Shooting</li><li>Editing</li><li>Color</li><li>Sound</li>
+    </ul>
+
+    <div class="about-stats">
+      <div class="stat">
+        <span class="stat__num" data-count="3">0</span>
+        <span class="stat__label">Years Filming</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="42">0</span>
+        <span class="stat__label">Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="12">0</span>
+        <span class="stat__label">Clients</span>
+      </div>
+    </div>
+
+    <div class="about-cta">
+      <a href="contact.html" class="cta-button magnetic">Get in Touch</a>
+    </div>
+
+    <!-- Now / Next cards -->
+    <div class="about-now-next">
+      <article class="mini-card">
+        <h4><iconify-icon icon="lucide:circle-check"></iconify-icon> Now</h4>
+        <ul>
+          <li>Short promos & reels for local brands</li>
+          <li>Color-managed edits for web & socials</li>
+          <li>AI-assisted ideation (references & boards)</li>
+        </ul>
+      </article>
+<article class="mini-card">
+  <h4><iconify-icon icon="lucide:rocket"></iconify-icon> Next</h4>
+  <ul>
+    <li>Short films with more narrative weight</li>
+    <li>Product blending motion and texture</li>
+    <li>Portrait stories on creators and what drives them</li>
+  </ul>
+</article>
+    </div>
+  </div>
+</section>
+
+<section class="about-tabs reveal" aria-label="Skills and workflow">
+  <div class="tabs" role="tablist" aria-label="About tabs">
+    <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-skills" id="tabbtn-skills">
+      <iconify-icon icon="solar:bolt-linear"></iconify-icon> Skills
+    </button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-workflow" id="tabbtn-workflow">
+      <iconify-icon icon="ph:flow-arrow"></iconify-icon> Workflow
+    </button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="tab-services" id="tabbtn-services">
+      <iconify-icon icon="lucide:briefcase"></iconify-icon> Services
+    </button>
+  </div>
+
+  <div class="panels">
+    <!-- SKILLS -->
+    <div class="panel is-active" id="tab-skills" role="tabpanel" aria-labelledby="tabbtn-skills">
+      <ul class="meter-list">
+        <li><span>Premiere Pro</span><span class="meter" data-value="90"></span></li>
+        <li><span>DaVinci Resolve (Edit/Color)</span><span class="meter" data-value="85"></span></li>
+        <li><span>After Effects (Titles/MoGFX)</span><span class="meter" data-value="70"></span></li>
+        <li><span>Sound Editing / Mix</span><span class="meter" data-value="65"></span></li>
+        <li><span>Camera Ops & Lighting</span><span class="meter" data-value="80"></span></li>
+      </ul>
+      <p class="panel-note">Meters reflect practical comfort for client delivery.</p>
+    </div>
+
+    <!-- WORKFLOW -->
+    <div class="panel" id="tab-workflow" role="tabpanel" aria-labelledby="tabbtn-workflow" hidden>
+      <ol class="flow-steps">
+        <li><iconify-icon icon="lucide:clipboard-list"></iconify-icon><strong>Kickoff</strong> – brief, references, deadlines, deliverables.</li>
+        <li><iconify-icon icon="lucide:layout-template"></iconify-icon><strong>Pre-pro</strong> – boards, shot-list, schedule, gear list.</li>
+        <li><iconify-icon icon="lucide:camera"></iconify-icon><strong>Shoot</strong> – clean coverage, audio, backups on set.</li>
+        <li><iconify-icon icon="lucide:scissors"></iconify-icon><strong>Edit</strong> – assembly → fine cut → color/sound/titles.</li>
+        <li><iconify-icon icon="lucide:check-circle-2"></iconify-icon><strong>Delivery</strong> – exports per platform; archive.</li>
+      </ol>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="panel" id="tab-services" role="tabpanel" aria-labelledby="tabbtn-services" hidden>
+      <div class="service-grid">
+        <article class="svc-pill"><iconify-icon icon="tabler:video"></iconify-icon><h5>Promos</h5><p>30–60s pieces built for attention.</p></article>
+        <article class="svc-pill"><iconify-icon icon="tabler:music"></iconify-icon><h5>Music Visuals</h5><p>Performance + concept cuts.</p></article>
+        <article class="svc-pill"><iconify-icon icon="tabler:brand-producthunt"></iconify-icon><h5>Product</h5><p>Hero shots, macro detail, loops.</p></article>
+        <article class="svc-pill"><iconify-icon icon="tabler:movie"></iconify-icon><h5>Micro-Docs</h5><p>People, craft, process stories.</p></article>
+      </div>
+      <a href="contact.html" class="cta-button magnetic svc-cta">Book a slot</a>
+    </div>
+  </div>
+</section>
+
+  <br>
+
+  
+
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="logofooter"><img src="Images/my logo.png" alt=""></div>
+    <p class="footer-text">© 2025 Naveed Murad. All rights reserved.</p>
+    <div class="social-links">
+
+      <a href="https://www.instagram.com/nav.jzx/" target="_blank" aria-label="Instagram">
+        <img src="Images/basil--instagram-outline.png" alt="Instagram">
+      </a>
+      <a href="https://bh.linkedin.com/in/naveed-murad-4b8385367" target="_blank" aria-label="LinkedIn">
+        <img src="Images/mingcute--linkedin-line.png" alt="LinkedIn">
+      </a>
+      <a href="mailto:Naveedmurad230@gmail.com" aria-label="Email">
+        <img src="Images/basil--gmail-outline.png" alt="Email">
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+  <!-- JS: reuse your hamburger + cursor-glow setup if already global.
+       Below adds reveal, counters, tilt, and magnetic buttons. -->
+ <script>
+
+/* =========================
+   Mobile nav
+========================= */
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+if (hamburger && mobileMenu){
+  const toggle = ()=>{ mobileMenu.classList.toggle('active'); hamburger.classList.toggle('open'); };
+  hamburger.addEventListener('click', toggle);
+  hamburger.addEventListener('keydown', e => (e.key==='Enter') && toggle());
+}
+
+/* =========================
+   Reveal on scroll
+========================= */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* =========================
+   Counters (for .stat__num)
+========================= */
+const counters = document.querySelectorAll('.stat__num');
+if (counters.length){
+  const ioC = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting) return;
+      const el = entry.target, target = +el.dataset.count;
+      let start = null;
+      function step(ts){
+        if(!start) start = ts;
+        const p = Math.min((ts - start)/900, 1);
+        el.textContent = Math.floor(p*target);
+        if(p<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      ioC.unobserve(el);
+    });
+  },{threshold:.6});
+  counters.forEach(el=>ioC.observe(el));
+}
+
+/* =========================
+   Skill meters (bullet-proof)
+   - Inserts .meter__fill if missing
+   - Animates with transform: scaleX()
+========================= */
+function armMeters(root=document){
+  root.querySelectorAll('.meter').forEach(m=>{
+    if(!m.querySelector('.meter__fill')){
+      m.insertAdjacentHTML('afterbegin','<span class="meter__fill" aria-hidden="true"></span>');
+    }
+  });
+}
+
+function animateMeters(container){
+  if(!container) return;
+  container.querySelectorAll('.meter').forEach(m=>{
+    const val = Math.max(0, Math.min(100, Number(m.dataset.value)||0));
+    const fill = m.querySelector('.meter__fill');
+    if(!fill) return;
+    // reset then animate (also works on re-open)
+    fill.style.transform = 'scaleX(0)';
+    // ensure the element is visible before animating (tabs unhide)
+    requestAnimationFrame(()=>{ fill.style.transition = 'transform 900ms ease'; fill.style.transform = `scaleX(${val/100})`; });
+  });
+}
+
+// arm meters once on load
+armMeters();
+
+/* =========================
+   Tabs
+========================= */
+(function(){
+  const tabs = document.querySelectorAll('.about-tabs .tab');
+  const panels = document.querySelectorAll('.about-tabs .panel');
+  if(!tabs.length) return;
+
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      const id = tab.getAttribute('aria-controls');
+
+      // switch active tab
+      tabs.forEach(t=>{ t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+      panels.forEach(p=>{ p.classList.remove('is-active'); p.hidden = true; });
+      tab.classList.add('is-active'); tab.setAttribute('aria-selected','true');
+
+      // show panel
+      const panel = document.getElementById(id);
+      if(panel){
+        panel.hidden = false;
+        panel.classList.add('is-active');
+
+        // (re)arm meters inside the newly opened panel (safe if none)
+        armMeters(panel);
+
+        // animate meters when "Skills" is opened
+        if(id === 'tab-skills'){
+          // wait a tick so CSS sees visibility change, then animate
+          setTimeout(()=> animateMeters(panel), 60);
+        }
+      }
+    });
+  });
+
+  // If Skills is the default active panel on load, animate it
+  const skillsOnLoad = document.getElementById('tab-skills');
+  if (skillsOnLoad && skillsOnLoad.classList.contains('is-active') && !skillsOnLoad.hidden){
+    // ensure fills exist then animate
+    armMeters(skillsOnLoad);
+    animateMeters(skillsOnLoad);
+  }
+
+  // Also animate when the Skills panel first scrolls into view (for tall pages)
+  if ('IntersectionObserver' in window){
+    const skillsPanel = document.getElementById('tab-skills');
+    if(skillsPanel){
+      const ioM = new IntersectionObserver(ents=>{
+        ents.forEach(e=>{
+          if(e.isIntersecting){
+            armMeters(skillsPanel);
+            animateMeters(skillsPanel);
+            ioM.unobserve(skillsPanel);
+          }
+        });
+      }, { threshold: .3 });
+      ioM.observe(skillsPanel);
+    }
+  }
+})();
+
+/* =========================
+   Cursor Glow Effect
+========================= */
+const glow = document.createElement('div');
+glow.classList.add('cursor-glow');
+document.body.appendChild(glow);
+
+let mouseX = 0, mouseY = 0;
+let posX = 0, posY = 0;
+let lastX = 0, lastY = 0;
+let scaleX = 1, scaleY = 1;
+
+const speed = 0.2;
+const maxStretch = 0.3;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animateGlow() {
+  // Smooth follow
+  posX += (mouseX - posX) * speed;
+  posY += (mouseY - posY) * speed;
+
+  // Velocity & stretch
+  const dx = mouseX - lastX;
+  const dy = mouseY - lastY;
+  const distance = Math.sqrt(dx * dx + dy * dy);
+  const stretch = Math.min(distance / 100, maxStretch);
+
+  scaleX = 1 + Math.abs(stretch * (dx / (distance || 1)));
+  scaleY = 1 + Math.abs(stretch * (dy / (distance || 1)));
+
+  glow.style.left = `${posX}px`;
+  glow.style.top = `${posY}px`;
+  glow.style.transform = `scale(${scaleX}, ${scaleY})`;
+
+  lastX = posX;
+  lastY = posY;
+
+  requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
+
+</script>
+
+</body>
+</html>
