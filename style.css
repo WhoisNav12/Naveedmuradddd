@@ -115,6 +115,8 @@ nav::before {
   gap: 5px;
 }
 
+
+
 .hamburger span {
   display: block;
   width: 25px;
@@ -157,9 +159,10 @@ nav::before {
 
 /* Responsive Design */
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
   .grey-rectangle {
     width: 345px !important;
+    margin-top: 150px !important;
   }
 }
 
@@ -1174,4 +1177,40 @@ nav a.active::after {
 .is-active {
   color: white !important;
   font-weight: 600;
+}
+
+
+
+
+/* CTA Button */
+.contact-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #ff6b4a, #ff9a3c); /* cherry → orange */
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.35s ease;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(255, 107, 74, 0.3);
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.7s; /* fade after subtitle */
+}
+
+/* Hover effect: glow + subtle lift */
+.contact-button:hover {
+  background: linear-gradient(135deg, #ff805b, #ffb347);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 125, 80, 0.45);
+}
+
+@media (max-width:450px) {
+    .contact-button {
+    display: block !important;         /* force button below subtitle */
+    padding: 10px 20px !important;
+    font-size: 10px !important;
+  }
 }
