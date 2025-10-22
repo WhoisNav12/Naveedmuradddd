@@ -159,14 +159,14 @@ nav::before {
 
 /* Responsive Design */
 
-@media (max-width: 420px) {
+@media (max-width: 430px) {
   .grey-rectangle {
     width: 345px !important;
-    margin-top: 150px !important;
+    margin-top: 200px !important;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
 
 .rectangle-img {
@@ -210,6 +210,73 @@ nav::before {
     padding: 10px 25px !important;
     font-size: 16px !important;
   }
+
+  .reachout-button {
+        display: block !important;         /* force button below subtitle */
+    padding: 10px 25px !important;
+    font-size: 16px !important;
+
+  }
+}
+/* 1) Make the outro use the same container as projects */
+.projects__outro {
+  width: 80%;
+  max-width: 1600px;     /* matches .projects.wrap */
+  margin: 60px auto 0;   /* center in page */
+  padding: 40px 0;
+  text-align: left;      /* optional: align like header above */
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* 2) Make the button match the section width */
+.projects__outro .reachout-button {
+  display: inline-block;   /* only as wide as its content */
+  margin: 14px auto 0;     /* top margin + centered horizontally */
+  text-align: center;
+}
+
+/* 3) FIX: real hover selector (replaces your duplicate .reachout-button block) */
+.reachout-button:hover {
+  background: linear-gradient(135deg, #ff805b, #ffb347);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 125, 80, 0.45);
+}
+
+/* 4) Responsive: keep it full-width on small screens too */
+@media (max-width: 900px) {
+  .projects__outro .reachout-button {
+    width: 100%;
+    font-size: 16px !important;
+    padding: 12px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects__outro { width: 80%; max-width: none; } /* same move you use elsewhere */
+}
+/* CTA Button */
+.reachout-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #ff6b4a, #ff9a3c); /* cherry → orange */
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.35s ease;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(255, 107, 74, 0.3);
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.7s; /* fade after subtitle */
+}
+
+/* Hover effect: glow + subtle lift */
+.reachout-button {
+  background: linear-gradient(135deg, #ff805b, #ffb347);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 125, 80, 0.45);
 }
 
 @media (max-width: 600px) {
@@ -843,7 +910,7 @@ nav a.active::after {
   margin-bottom:14px;
 }
 .projects__title{
-  color:#fff;
+  color:#999999;
   font-size:clamp(28px,4vw,44px);
   line-height:1.1;
   letter-spacing:-0.015em;
@@ -968,10 +1035,9 @@ nav a.active::after {
 /* CTA block: mirrors your form/card borders */
 .projects__cta{
   margin-top:16px;
-  background:#202020;
-  border:1px solid rgba(255,255,255,0.06);
+
   border-radius:16px; padding:16px;
-  box-shadow:0 8px 26px rgba(0,0,0,.30);
+
   text-align:center;
 }
 .projects__cta p{ color:#eaeaea; margin-bottom:10px; }
@@ -1214,3 +1280,191 @@ nav a.active::after {
     font-size: 10px !important;
   }
 }
+
+
+/* Single-card grid helper */
+.projects__grid--single {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+/* Optional: center the CTA under the section */
+.projects__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+/* =========================
+   Recent Work (Home)
+========================= */
+.recent-work {
+
+  text-align: center;
+  width: 100%;
+  margin: 80px 0;
+}
+
+.recent-head {
+  margin-bottom: 24px;
+}
+
+.recent-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.recent-sub {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Video section */
+.recent-video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  margin: 40px auto;
+  max-height: 70vh;
+}
+
+.recent-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85);
+}
+
+/* Subtle dark overlay for contrast */
+.recent-video .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+/* Center CTA button */
+.recent-cta {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Centered section header */
+.projects__head--center {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 800px;
+}
+
+/* Single project grid layout */
+.projects__grid--single {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Make video full width and cinematic */
+.p-card--wide {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.p-card--wide .p-card__media {
+  position: relative;
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.p-card--wide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Center the CTA under the section */
+.projects__cta {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.fade-up { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .6s ease; }
+.fade-up.is-visible { opacity: 1; transform: translateY(0); }
+
+.recent {
+  margin-top: 380px;   /* Try 180–220px depending on how airy you want it */
+}
+.grey-rectangle {
+  margin-top: 340px;  /* adjust this value — try 100–160px */
+}
+
+
+/* --- FIX: Keep gutters and rounded corners on mobile/tablet --- */
+@media (max-width: 1024px) {
+  /* Keep comfortable side padding on the whole section */
+  .projects.recent {
+    padding-inline: clamp(16px, 4vw, 24px);
+    margin-top: 140px; /* keep your breathing room */
+  }
+
+  /* Center the header and keep readable line-length */
+  .projects__head--center {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 800px;
+    padding-inline: 0; /* header inherits section gutters */
+  }
+
+  /* Keep the single card constrained and centered */
+  .projects__grid--single {
+    justify-content: center;
+    margin-top: 28px;
+  }
+
+  /* Card width limited by viewport with gutters preserved */
+  .p-card--wide {
+    width: 100%;
+    max-width: clamp(560px, 92vw, 1000px);
+    margin-inline: auto;
+  }
+
+  /* Video fills the card, not the entire viewport, with rounded corners */
+  .p-card--wide .p-card__media {
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .p-card--wide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Center the text under the video */
+  .p-card--wide .p-card__body {
+    text-align: center;
+    padding-inline: clamp(12px, 3vw, 24px);
+  }
+
+  .projects__cta {
+    justify-content: center;
+    margin-top: 18px;
+  }
+}
+
+/* Extra tune for small phones */
+@media (max-width: 480px) {
+  .p-card--wide {
+    max-width: 600px;            /* keeps nice gutters even on tiny screens */
+  }
+  .p-card--wide .p-card__media {
+    border-radius: 14px;
+  }
+}
+
