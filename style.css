@@ -1468,3 +1468,30 @@ nav a.active::after {
   }
 }
 
+/* Checkbox row */
+.f-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 24px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff; /* match your form text color */
+  cursor: pointer;
+  user-select: none;
+}
+
+/* the input itself */
+.f-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #b75255; /* your accent red */
+  flex-shrink: 0;
+}
+
+/* optional: if you want lighter label text */
+.f-check span {
+  color: rgba(255,255,255,0.8);
+  font-weight: 400;
+}
