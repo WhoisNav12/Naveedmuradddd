@@ -86,72 +86,61 @@
       </article>
     </div>
 
-    <!-- Form -->
-    <form id="contactForm" class="contact-form" action="https://formspree.io/f/mkgqzzay" method="POST" novalidate>
-      <!-- Honeypot (spam trap) -->
-      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+<!-- Form -->
+<form id="contactForm" class="contact-form" action="https://formspree.io/f/mkgqzzay" method="POST" novalidate>
+  <!-- Honeypot (spam trap) -->
+  <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
 
-      <div class="f-grid">
-        <label class="f-item">
-          <span>Name</span>
-          <input type="text" name="name" placeholder="Your name" required>
-        </label>
+  <div class="f-grid">
+    <label class="f-item">
+      <span>Name</span>
+      <input type="text" name="name" placeholder="Your name" required>
+    </label>
 
-        <label class="f-item">
-          <span>Email</span>
-          <input type="email" name="email" placeholder="you@example.com" required>
-        </label>
+    <label class="f-item">
+      <span>Email</span>
+      <input type="email" name="email" id="userEmail" placeholder="you@example.com" required>
+    </label>
 
-        <label class="f-item">
-          <span>Project Type</span>
-          <select name="project_type" required>
-            <option value="" selected disabled>Select one</option>
-            <option>Promo / Ad</option>
-            <option>Color</option>
-            <option>Product Video</option>
-            <option>Micro-Doc</option>
-            <option>Other</option>
-          </select>
-        </label>
+    <label class="f-item full">
+      <span>Project Type</span>
+      <select name="project_type" required>
+        <option value="" selected disabled>Select one</option>
+        <option>Promo / Ad</option>
+        <option>Color</option>
+        <option>Product Video</option>
+        <option>Micro-Doc</option>
+        <option>Other</option>
+      </select>
+    </label>
 
-        <label class="f-item">
-          <span>Deadline</span>
-          <input type="date" name="deadline">
-        </label>
+    <label class="f-item full">
+      <span>Message</span>
+      <textarea name="message" rows="6" placeholder="What are we making? Key goals, references, platforms…" maxlength="2000" required></textarea>
+      <div class="f-hint"><span id="charCount">0</span>/2000</div>
+    </label>
+  </div>
 
-        <label class="f-item full">
-          <span>Budget (optional)</span>
-          <select name="budget">
-            <option value="" selected>Not sure yet</option>
-            <option>$250–$500</option>
-            <option>$500–$1,000</option>
-            <option>$1,000–$2,500</option>
-            <option>$2,500+</option>
-          </select>
-        </label>
+  <!-- Send me a copy -->
+  <label class="f-check">
+    <input type="checkbox" id="sendCopyToggle" name="send_copy">
+    <span>Send me a copy</span>
+  </label>
 
-        <label class="f-item full">
-          <span>Message</span>
-          <textarea name="message" rows="6" placeholder="What are we making? Key goals, references, platforms…" maxlength="2000" required></textarea>
-          <div class="f-hint"><span id="charCount">0</span>/2000</div>
-        </label>
-      </div>
+  <!-- Hidden CC field (populated by JS if the user asks for a copy) -->
+  <input type="hidden" name="_cc" id="ccField" value="">
 
-      <label class="f-check">
-        <input type="checkbox" name="send_copy"> Send me a copy
-      </label>
+  <div class="f-actions">
+    <button class="contact-button magnetic" type="submit" id="sendBtn">
+      <span class="btn-label">Send Message</span>
+      <span class="btn-spinner" aria-hidden="true"></span>
+    </button>
+    <span class="f-note">I usually reply within 24 hours.</span>
+  </div>
 
-      <div class="f-actions">
-        <button class="contact-button magnetic" type="submit" id="sendBtn">
-          <span class="btn-label">Send Message</span>
-          <span class="btn-spinner" aria-hidden="true"></span>
-        </button>
-        <span class="f-note">I usually reply within 24 hours.</span>
-      </div>
-
-      <!-- Success / error messages -->
-      <div class="f-toast" id="formToast" role="status" aria-live="polite" hidden></div>
-    </form>
+  <!-- Success / error messages -->
+  <div class="f-toast" id="formToast" role="status" aria-live="polite" hidden></div>
+</form>
 
     <!-- FAQ -->
     <section class="contact-faq">
@@ -363,6 +352,36 @@
         }
       });
     })();
+
+
+
+
+
+      (function () {
+    const emailInput = document.getElementById('userEmail');
+    const sendCopyToggle = document.getElementById('sendCopyToggle');
+    const ccField = document.getElementById('ccField');
+
+    function updateCcField() {
+      if (sendCopyToggle.checked && emailInput.value.trim() !== "") {
+        ccField.value = emailInput.value.trim();
+      } else {
+        ccField.value = "";
+      }
+    }
+
+    // when they toggle the checkbox
+    sendCopyToggle.addEventListener('change', updateCcField);
+
+    // if they edit their email after ticking it
+    emailInput.addEventListener('input', updateCcField);
+
+    // also run right before submit just in case
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function () {
+      updateCcField();
+    });
+  })();
   </script>
 </body>
 </html>
