@@ -251,6 +251,11 @@ nav::before {
   text-align: left;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+.projects__head--center .projects__sub {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+}
 
 /* Button width */
 .projects__outro .reachout-button {
