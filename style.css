@@ -204,7 +204,7 @@ nav::before {
 
   .name {
     font-size: 80px !important;
-    margin-top: -35px !important;
+    margin-top: -55px !important;
     line-height: 1.1; 
   }
   .subtitle-container {
@@ -1875,6 +1875,11 @@ nav a.active::after {
   background: rgba(0,0,0,0.65);
 }
 
+
+.logo-mobile {
+  display: none;
+}
+
 /* Mobile view */
 @media (max-width: 600px) {
   .logo-desktop {
@@ -1893,4 +1898,3 @@ nav a.active::after {
   .logo__desktop { display: none !important; }
   .logo__mobile { display: block !important; }
 }
-
