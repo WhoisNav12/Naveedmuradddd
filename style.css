@@ -1898,3 +1898,14 @@ nav a.active::after {
   .logo__desktop { display: none !important; }
   .logo__mobile { display: block !important; }
 }
+
+/* Weddings Section */
+.weddings.wrap {
+  width: 80%;
+  max-width: 1600px;
+  margin: 80px auto 40px;
+}
+
+.weddings .projects__head {
+  margin-bottom: 18px;
+}
