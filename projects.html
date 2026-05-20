@@ -163,7 +163,6 @@
         src="Videos/Moody Aesthetics.mov"
         preload="metadata"
         playsinline
-        muted
         loop
         autoplay
       ></video>
@@ -527,7 +526,7 @@ Atmospheric visuals crafted with rhythm and precision.
         document.body.style.overflow = "";
       }
 
-      document.querySelectorAll(".p-card__media").forEach((link) => {
+      document.querySelectorAll(".p-card__media, .p-d__media").forEach((link) => {
         link.addEventListener("click", (e) => {
           e.preventDefault(); // stops the "#" jump
           const v = link.querySelector("video");
